@@ -7,7 +7,8 @@
     "ts:node": "nodemon",
     "dev": "concurrently \"tsc --watch\" \"nodemon build/server.js\"",
     "start": "node ./build/server.js",
-    "clean": "rm -rf build"
+    "clean": "rm -rf build",
+    "ts:compile": "tsc"
   },
   "keywords": [],
   "author": "",
