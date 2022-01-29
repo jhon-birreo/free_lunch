@@ -1,0 +1,21 @@
+<div class="col-md-4 mx-auto">
+    <div class="card card-body">
+        <form action="/dishes/save" method="post">
+            <div class="form-group">
+                 <label for="name">Nombre:</label>
+                <input class="form-control" id="name" name="name" type="text" placeholder="Lomo saltado" autofocus required>
+            </div>
+            <div class="form-group">
+            <label for="ingredient">Seleccione ingrediente:</label>
+            <select class="form-control" name="ingredients" id="ingredient" multiple="multiple">
+                {{#each data}}
+                    <option value="{{id}}">  {{name }}</option>
+                {{/each}}
+            </select>
+            </div>
+            <button class="btn btn-outline-success " type="submit">
+                Guardar
+            </button>
+        </form>
+    </div>
+</div>       

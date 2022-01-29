@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-7 text-center justify-content-md-center">
+            <div class=" mx-auto">
+                <table id="orderhistory"  class="table">
+                    
+                    <thead>
+                        <tr>
+                            <th>N. Orden</th>
+                            <th>Plato</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td >{{n_order}}</td>
+                            <td>{{dishes}}</td>
+                            <td><span class="badge badge-success"> {{status}}</span></td>
+                            <td>{{prettifyDate createdAt}}</td>
+                            
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>  
+<script>
+    $('#orderhistory').DataTable ({
+  "pagingType": "full_numbers",
+   "lengthMenu": [
+   [10, 25, 50, -1],
+  [10, 25, 50, "All"],
+  ],
+responsive: true,
+ language: {
+  search: "_INPUT_",
+  searchPlaceholder: "Buscar registros",
+   "paginate": {
+       "first": "<",
+       "last": ">",
+       "next": ">>",
+       "previous": "<<"
+   },
+   "emptyTable": "No hay información",
+   "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+   "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+   "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+   "infoPostFix": "",
+   "thousands": ",",
+   "lengthMenu": "Mostrar _MENU_ Entradas",
+   "loadingRecords": "Cargando...",
+   "processing": "Procesando...",
+   "search": "Buscar:",
+   "zeroRecords": "Sin resultados encontrados",
+  },
+ 
+});
+
+
+
+
+var table = $('#orderhistory').DataTable();
+</script>  
+    <link rel="stylesheet" href="../../helper/datatable.css">

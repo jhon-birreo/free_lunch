@@ -1,0 +1,41 @@
+{{#if data}}
+    {{!-- {{#each data}}
+    {{data}}
+        <div class="col-md-4">
+            <div class="card card-body">
+                <h3>{{name}}</h3>
+                <h4>Cantidad {{quantity}}</h4>
+            </div>
+        </div>
+    {{/each}} --}}
+    <div class=" mx-auto">
+        <table id="datatables" class="table">
+            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ingediente</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                <td>{{math @index "+" 1 }}</td>
+                <td>{{name}}</td>
+                <td>
+                    {{#if quantity }}
+                        <span class="badge badge-success"> {{quantity}}</span>
+                    {{else}}
+                        <span class="badge badge-danger">{{quantity}}</span>
+                    {{/if}}
+                </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+<script src="../../helper/datatable.js"></script>
+  <link rel="stylesheet" href="../../helper/datatable.css">
+{{/if}}

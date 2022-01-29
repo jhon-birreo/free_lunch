@@ -1,0 +1,7 @@
+{
+    "PORT":3000,
+    "MONGODB_URI":"mongodb://localhost/free_lunch",
+    "API_VERSION":"/api/v1",
+    "REDIS_PORT":"6379",
+    "REDIS_HOST":"127.0.0.1"
+}

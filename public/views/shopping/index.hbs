@@ -1,0 +1,28 @@
+    <div class=" mx-auto">
+        <table id="datatables" class="table">
+            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ingrediente</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td >{{math @index "+" 1 }}</td>
+                    <td>{{ingredients.name}}</td>
+                    <td class="justify-content-center align-self-center" >{{quantity}}</td>
+                    <td>{{prettifyDate createdAt}}</td>
+                    
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+    <script src="../../helper/datatable.js"></script>
+  <link rel="stylesheet" href="../../helper/datatable.css">

@@ -1,0 +1,28 @@
+
+    <div class=" mx-auto">
+        <p>Cantidad de ingrediente que se necesita para realizar el plato.</p>
+        <table id="datatables" class="table">
+            
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Plato</th>
+                    <th>Ingredientes</th>
+                    <th>Cant.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td >{{math @index "+" 1 }}</td>
+                    <td class="justify-content-center align-self-center" >{{dishes}}</td>
+                    <td class="justify-content-center align-self-center" >{{ingredients.name}}</td>
+                    <td class="justify-content-center align-self-center" ><span class="badge badge-info"> {{quantity}}</span></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+<script src="../../helper/datatable.js"></script>
+  <link rel="stylesheet" href="../../helper/datatable.css">

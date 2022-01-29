@@ -1,0 +1,19 @@
+.dataTables_filter {
+    float: right;
+    text-align: right;
+}    
+.dataTables_paginate{
+    float: right;
+    text-align: right;
+}
+#datatables_length{
+    float: left;
+    text-align: left;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
