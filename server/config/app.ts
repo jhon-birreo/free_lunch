@@ -19,8 +19,8 @@ export class App {
     this.app = express();
     this.settingPort();
     this.middleware();
-    this.publicView();
     this.staticFiles(); 
+    this.publicView();
     this.redisConfig();
   }
   redisConfig(){
@@ -31,7 +31,7 @@ export class App {
   }
   publicView() {
     
-    this.app.set("views", path.join(__dirname, "../../public/views"));
+    this.app.set("views", path.join(__dirname, "../../public"));
     const hbs = create({
       defaultLayout: "main",
       extname: ".hbs",
