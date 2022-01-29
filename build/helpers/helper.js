@@ -12,7 +12,6 @@ module.exports = {
         }[operator];
     },
     prettifyDate: (timestamp) => {
-        console.log(timestamp);
         function addZero(i) {
             if (i < 10) {
                 i = "0" + i;

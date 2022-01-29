@@ -18,7 +18,6 @@ class OrderInfrastructure {
     constructor() {
         this.findAll = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const order = yield Order.findAll();
-            console.log(order);
             res.render("order/index", { title: 'order', data: order.data });
         });
         this.create = (req, res) => __awaiter(this, void 0, void 0, function* () {

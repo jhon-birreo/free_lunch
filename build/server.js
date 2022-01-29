@@ -13,9 +13,6 @@ const app_1 = require("./config/app");
 const database_1 = require("./config/database");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        // dotenv.config();
-        // const res = conecction();
-        // console.log(res);
         yield (0, database_1.mongooConnect)();
         const app = new app_1.App();
         yield app.listen();

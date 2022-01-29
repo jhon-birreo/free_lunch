@@ -19,8 +19,6 @@ class RecipeInfrastructure {
     constructor() {
         this.findAll = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const dishes = yield Recipe.findAll();
-            console.log('diseeeee');
-            console.log(dishes);
             res.render("recipe/index", { title: "recipe", data: dishes.data });
         });
         this.findById = (req, res) => __awaiter(this, void 0, void 0, function* () {
@@ -40,7 +38,6 @@ class RecipeInfrastructure {
         });
         this.save = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const body = req.body;
-            console.log(body);
             yield Recipe.create(body);
             const recipe = yield Recipe.findById(body.dishes);
             return res.status(201).json(recipe);

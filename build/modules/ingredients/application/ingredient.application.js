@@ -43,10 +43,8 @@ class IngredientApplication {
     }
     update(value) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(value);
             try {
                 const name = value.name;
-                // const find = await IngredientDomain.findOne({ name }).select({ quantity: 1 }).exec();
                 const quantity = value.quantity;
                 const update = yield ingredient_domain_1.default.findOneAndUpdate({ name }, { $set: { quantity } }, { new: true });
                 return { success: true, data: update };
@@ -61,7 +59,6 @@ class IngredientApplication {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const find = yield ingredient_domain_1.default.findOne({ name }).exec();
-                // const find = await IngredientDomain.findOne({ name }).select({ quantity: 1 }).exec();
                 return { success: true, data: find };
             }
             catch (error) {

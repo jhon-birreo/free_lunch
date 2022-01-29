@@ -98,8 +98,6 @@ const validateQuantity = (data, payload, callback) => __awaiter(void 0, void 0, 
                 let initValue = 0;
                 let quantityShop = 0;
                 const find = yield Ingredient.findOne(nameIngredient);
-                console.log('Find one');
-                console.log(find);
                 const quantityDB = find.data.quantity;
                 while (initValue < quantity) {
                     let MarketplaceQuantity = yield getMarketplace(nameIngredient, payload);

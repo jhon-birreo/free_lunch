@@ -24,10 +24,6 @@ const clientRedis = redis.createClient();
 class RedisConf {
     getRedis(key) {
         return new Promise((resolve, reject) => {
-            // clientRedis.p(key);
-            // clientRedis.get('framework', function(err, reply) {
-            //   console.log(reply); 
-            // });
         });
     }
     setRedis(key, value) {

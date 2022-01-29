@@ -17,7 +17,6 @@ const shopping_domain_1 = __importDefault(require("../domain/shopping.domain"));
 class ShoppingApplication {
     findAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('finall');
             try {
                 let dishesName = null;
                 const shoppingDomain = yield shopping_domain_1.default.find({})

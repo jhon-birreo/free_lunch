@@ -35,8 +35,6 @@ class DishesApplication {
     }
     findById(value) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('*-*-*-*');
-            console.log(value);
             try {
                 const recipeDomain = yield dishes_domain_1.default.findOne({ name: value })
                     .populate({

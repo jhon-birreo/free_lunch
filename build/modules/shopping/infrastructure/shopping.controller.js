@@ -19,7 +19,6 @@ class ShoppingInfrastructure {
     constructor() {
         this.findAll = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const shopping = yield Shopping.findAll();
-            console.log(shopping);
             res.render("shopping/index", { title: "shopping", data: shopping.data });
         });
         // create: RequestHandler = async (req: Request, res: Response) => {

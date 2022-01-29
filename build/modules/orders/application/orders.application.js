@@ -41,8 +41,6 @@ class OrderApplication {
     }
     create(value) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('order');
-            console.log(value);
             try {
                 const newInsert = yield new order_domain_1.default(value).save();
                 return { success: true, data: newInsert };

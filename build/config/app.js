@@ -63,8 +63,6 @@ class App {
         });
     }
     publicView() {
-        console.log(this.app.get("views"));
-        console.log(path_1.default.join(__dirname, "../../public/views"));
         this.app.set("views", path_1.default.join(__dirname, "../../public/views"));
         const hbs = (0, express_handlebars_1.create)({
             defaultLayout: "main",
@@ -99,9 +97,6 @@ class App {
             });
             const io = new socketio.Server(server);
             (0, order_socket_io_1.OrderSocket)(io);
-            // io.on("disconnect", function (payload) {
-            //   console.log("client socket disconnected", payload.id);
-            // });
         });
     }
     settingPort() {
