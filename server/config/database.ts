@@ -9,6 +9,7 @@ export function mongooConnect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     };
+    // mongosh "mongodb+srv://cluster0.qdfg7.mongodb.net/myFirstDatabase" --username chat_user
     mongoose
       .connect(env.MONGODB_URI, clientOption,()=>{
         console.log('connect database mongoose!');
