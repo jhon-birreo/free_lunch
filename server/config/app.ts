@@ -1,6 +1,5 @@
 import express, { Application } from "express";
 import * as socketio from "socket.io";
-import * as http from "http";
 import { json, urlencoded } from "body-parser";
 import { create } from "express-handlebars";
 import _handlebars from "handlebars";
@@ -22,7 +21,6 @@ export class App {
     this.middleware();
     this.publicView();
     this.staticFiles(); 
-    this.routes();
     this.redisConfig();
   }
   redisConfig(){
@@ -39,18 +37,6 @@ export class App {
       extname: ".hbs",
       layoutsDir: path.join(this.app.get("views"), "layouts"),
       partialsDir: path.join(this.app.get("views"), "partials"),
-      // helpers: {
-      //   math: function(lvalue:any, operator:string, rvalue:any) {lvalue = parseFloat(lvalue);
-      //       rvalue = parseFloat(rvalue);
-      //       return {
-      //           "+": lvalue + rvalue,
-      //           "-": lvalue - rvalue,
-      //           "*": lvalue * rvalue,
-      //           "/": lvalue / rvalue,
-      //           "%": lvalue % rvalue
-      //       }[operator];
-      //   }
-      // },
       helpers: require("../helpers/helper"),
       handlebars: allowInsecurePrototypeAccess(_handlebars),
     });
