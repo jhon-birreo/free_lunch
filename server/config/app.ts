@@ -47,8 +47,8 @@ export class App {
     this.app.use(express.static(path.join(__dirname, "../../public")));
   }
   async listen() {
-    const server = await this.app.listen(this.app.get("port"), () => {
-      console.log(`Servidor : http://localhost:${this.app.get("port")}`);
+    const server = await this.app.listen(this.app.get("port"),env.HOST_NAME, () => {
+      console.log(`Servidor : http://${env.HOST_NAME}:${this.app.get("port")}`);
     });
     const io = new socketio.Server(server);
     

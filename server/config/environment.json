@@ -1,5 +1,6 @@
 {
     "PORT":3000,
+    "HOST_NAME":"localhost",
     "MONGODB_URI":"mongodb+srv://jhonbn:jhonbn123@cluster0.mhaua.mongodb.net/free_lunch",
     "API_VERSION":"/api/v1",
     "REDIS_PORT":"6379",
