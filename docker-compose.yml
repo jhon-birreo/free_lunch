@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    container_name: freelunch
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+      - redis
+    volumes:
+      - .:/app
+    # command: npm run ts:compile
+  mongo:
+    container_name: mongodatabase
+    image: mongo
+    ports:
+      - "27017:27017"
+  redis:
+    container_name: redischache
+    image: redis
+    ports:
+      - "6378:6379"

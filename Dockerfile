@@ -1,33 +1,18 @@
 FROM node:16
 
-WORKDIR /APP
+WORKDIR /app
 
 COPY package*.json ./
 
-# NOde Packages install 
-RUN npm install
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
 
-# Configure Package Management System (APT) & install MongoDB
-RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add - \
-&& sudo apt-get install gnupg \
-&& wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add - \
-&& echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list \
-&& sudo apt-get update \
-&& sudo apt-get install -y mongodb-org \
-&& sudo systemctl start mongod
-
-# Redis server
-RUN apt-get install -y redis-server
-
-# Redis server
-RUN apt-get install -y redis-server
+# NOde Packages install
+RUN NODE_ENV=$NODE_ENV npm install -g nodemon && npm install
 
 COPY . .
 
 EXPOSE 3000
 
-# Start MongoDB
-CMD mongod --fork -f /etc/mongodb.conf \
- && redis-server /etc/redis/redis.conf \
- && ["npm","run","node:compile"] \
- && ["npm","start"]
+# Start Project
+CMD ["npm","start"]
