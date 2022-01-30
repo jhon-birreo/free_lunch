@@ -6,9 +6,10 @@
   "scripts": {
     "ts:node": "nodemon",
     "dev": "concurrently \"tsc --watch\" \"nodemon build/server.js\"",
-    "start": "node ./build/server.js",
+    "start:prod": "node ./build/server.js",
     "clean": "rm -rf build",
-    "ts:compile": "npx tsc"
+    "ts:compile": "npx tsc",
+    "start":"npx tsc && npm start"
   },
   "keywords": [],
   "author": "",

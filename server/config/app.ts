@@ -44,7 +44,7 @@ export class App {
     this.app.set("view engine", "hbs");
   }
   staticFiles() {
-    this.app.use(express.static(path.join(__dirname, "../../public")));
+    this.app.use('/',express.static(path.join(__dirname, "../../public")));
   }
   async listen() {
     const server = await this.app.listen(this.app.get("port"),env.HOST_NAME, () => {
